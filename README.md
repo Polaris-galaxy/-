@@ -1,11 +1,11 @@
-YOLO数据增强使用指南
-下面我将详细介绍如何使用上面的代码进行YOLO数据增强。
+#YOLO数据增强使用指南
+##下面我将详细介绍如何使用上面的代码进行YOLO数据增强。
 
-1. 准备工作
-1.1 安装必要的库
+##1. 准备工作
+###1.1 安装必要的库
 bash
 pip install albumentations opencv-python Pillow numpy
-1.2 准备数据集
+###1.2 准备数据集
 确保您的YOLO数据集目录结构如下：
 
 text
@@ -20,11 +20,11 @@ your_dataset/
     ├── image2.txt
     ├── image3.txt
     └── ...
-1.3 创建Python脚本
+###1.3 创建Python脚本
 将上面的完整代码保存为yolo_augmentation.py
 
-2. 基本使用方法
-2.1 简单增强（推荐新手）
+##2. 基本使用方法
+###2.1 简单增强（推荐新手）
 创建一个简单的使用脚本simple_augment.py：
 
 python
@@ -52,11 +52,11 @@ def main():
 
 if __name__ == "__main__":
     main()
-2.2 运行脚本
+###2.2 运行脚本
 bash
 python simple_augment.py
-3. 高级使用方法
-3.1 自定义增强参数
+##3. 高级使用方法
+###3.1 自定义增强参数
 创建custom_augment.py：
 
 python
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     
     # 测试单张图像增强效果（可选）
     # test_single_image()
-3.2 分步增强（更精细的控制）
+###3.2 分步增强（更精细的控制）
 创建step_by_step_augment.py：
 
 python
@@ -256,7 +256,7 @@ def step_by_step_augmentation():
 
 if __name__ == "__main__":
     step_by_step_augmentation()
-4. 验证增强结果
+##4. 验证增强结果
 创建verify_augmentation.py来验证增强结果：
 
 python
@@ -340,7 +340,7 @@ def verify_augmentation(dataset_dir):
 
 if __name__ == "__main__":
     verify_augmentation('./augmented_dataset')  # 替换为您的增强数据集路径
-5. 实际应用示例
+##5. 实际应用示例
 5.1 针对小数据集的增强策略
 python
 from yolo_augmentation import YOLODatasetAugmentor
@@ -380,7 +380,7 @@ def augment_large_dataset():
         output_dir='./augmented_large_dataset',
         copy_original=False  # 不复制原始数据
     )
-6. 使用提示和注意事项
+##6. 使用提示和注意事项
 内存管理：如果数据集很大，可以考虑分批处理
 
 增强强度：根据数据集大小调整增强强度
